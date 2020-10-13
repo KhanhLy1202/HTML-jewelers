@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+//------------------------------------------------------------
+//    Variable
+//------------------------------------------------------------
+
+//Font
+
+$default-font: 'Raleway', sans-serif;
+
+$default-transition: true;
+$default-transition-duration: 0.5s;
+
+$default-img-hover: false;
+$default-img-hover-opacity: 0.7;
+
+//------------------------------------------------------------
+//    Size
+//------------------------------------------------------------
+$width-site: 1170px;
+$screen-tb: 1279px;
+$screen-md: 1023px;
+$screen-sm: 767px;
+$screen-xs: 480px;
+
+//------------------------------------------------------------
+//    Colors
+//------------------------------------------------------------
+
+$text: #333333;
+$border: #e0e0e0;
+$lightYellow: #fefbf3;
+$white: #ffff;
+$yellow: #ffba44;
+$grey: #f9f9f9;

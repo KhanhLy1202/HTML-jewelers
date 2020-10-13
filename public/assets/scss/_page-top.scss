@@ -1,0 +1,840 @@
+//===========================================================
+// TOP PAGE
+//===========================================================
+.lContainer {
+	&.-topPage {
+		.pageHead {
+			background-image: url(../img/top/banner.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 510px;
+			position: relative;
+			@include max-screen($screen-md) {
+				height: 400px;
+			}
+			@include max-screen($screen-sm) {
+				height: 400px !important;
+			}
+			#video-viewport {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				z-index: -1;
+				@media (max-width: 767px) {
+					display: none;
+				}
+			}
+
+			video {
+				width: 100%;
+			}
+
+			&.fullscreen-bg {
+				position: relative;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				overflow: hidden;
+				z-index: -100;
+				@media (max-width: $screen-sm) {
+					background: url('../img/top/banner-sp.png') center center / cover
+						no-repeat;
+				}
+			}
+			.blockBanner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				text-align: center;
+				padding: 1.5rem;
+				transform: translate(-50%, -50%);
+				@include max-screen($screen-sm) {
+					top: 70%;
+				}
+				.textVideo {
+					@include font-size(36.74);
+					font-weight: 500;
+					color: $white;
+					text-shadow: 0px 3px 3px rgba(167, 118, 35, 0.54);
+					@include max-screen($screen-tb) {
+						@include font-size(30);
+					}
+					@include max-screen($screen-sm) {
+						@include font-size(26);
+						line-height: 28px;
+					}
+				}
+				.btn {
+					margin-top: 2rem;
+				}
+			}
+		}
+		.mContainer {
+			&.diamond {
+				padding-top: 9rem;
+				text-align: center;
+				@include max-screen($screen-tb) {
+					padding-top: 7rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 4rem;
+				}
+				img {
+					padding-bottom: 3rem;
+					@include max-screen($screen-sm) {
+						padding-bottom: 2rem;
+					}
+				}
+				.btnArea {
+					padding-bottom: 3rem;
+					@include max-screen($screen-sm) {
+						padding-bottom: 2rem;
+					}
+				}
+				.handCont {
+					padding-top: 4rem;
+					@include max-screen($screen-sm) {
+						padding-top: 0rem;
+					}
+					.hand {
+						padding-top: 4rem;
+						@include max-screen($screen-sm) {
+							padding-top: 3rem;
+						}
+					}
+					.handBox {
+						position: relative;
+						.videoBg {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							display: none;
+						}
+					}
+					video {
+						width: 100%;
+					}
+				}
+			}
+			&.aboutDiamond {
+				padding-top: 7rem;
+				@include max-screen($screen-tb) {
+					padding-top: 5rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 2rem;
+				}
+				.typeDiamond {
+					display: flex;
+					justify-content: space-between;
+					max-width: 500px;
+					margin: 0 auto;
+					padding-bottom: 3rem;
+					@include max-screen($screen-sm) {
+						padding-bottom: 2rem;
+					}
+					&__item {
+						padding: 0 1.5rem;
+						text-transform: uppercase;
+						@include font-size(14);
+						@include max-screen($screen-sm) {
+							@include font-size(12);
+						}
+						&:hover {
+							color: $yellow;
+						}
+					}
+				}
+				.diamondSlider {
+					position: relative;
+					.diamonBlock {
+						height: 200px;
+						display: flex;
+						margin-bottom: 1rem;
+
+						@include max-screen(500px) {
+							height: 160px;
+						}
+						&__item {
+							height: 200px;
+							width: 20%;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							@include max-screen(500px) {
+								height: 160px;
+							}
+							&:focus {
+								outline: none;
+							}
+							.content {
+								height: 100%;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								&__img {
+									margin-bottom: 2rem;
+									height: 100%;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									@include max-screen(500px) {
+										margin-bottom: 0rem;
+									}
+									img {
+										margin: 0 auto;
+										max-height: 110px;
+										@include max-screen($screen-md) {
+											max-height: 90px;
+										}
+										@include max-screen(500px) {
+											max-height: 75px;
+										}
+										@include max-screen(380px) {
+											max-height: 50px;
+										}
+									}
+								}
+							}
+							&.slick-active {
+								&.slick-current {
+									.content {
+										&__img {
+											img {
+												max-height: 180px;
+												@include max-screen(500px) {
+													max-height: 135px;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.customJewelers {
+				padding-top: 9rem;
+				@include max-screen($screen-tb) {
+					padding-top: 7rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 5rem;
+				}
+				.useBlock {
+					padding-right: 5rem;
+					@include max-screen($screen-tb) {
+						padding-right: 3rem;
+					}
+					@include max-screen($screen-sm) {
+						padding-right: 0;
+					}
+					.useCont {
+						padding-bottom: 3rem;
+						@include max-screen($screen-sm) {
+							padding-bottom: 2rem;
+						}
+						&__item {
+							padding-bottom: 1.5rem;
+							&:last-child {
+								padding-bottom: 0;
+							}
+							.content {
+								display: flex;
+								align-items: center;
+								padding: 1.5rem;
+								background-color: $grey;
+								&:hover {
+									background-color: $yellow;
+									color: $white;
+									img {
+										filter: brightness(0) invert(1);
+									}
+								}
+								&__img {
+									width: 130px;
+									text-align: center;
+									@include max-screen($screen-tb) {
+										width: 80px;
+									}
+									@include max-screen($screen-xs) {
+										width: 60px;
+									}
+								}
+								&__txt {
+									width: calc(100% - 130px);
+									padding-left: 1.5rem;
+									@include max-screen($screen-tb) {
+										width: calc(100% - 80px);
+									}
+									@include max-screen($screen-xs) {
+										width: calc(100% - 60px);
+									}
+									.txt {
+										display: flex;
+										.number {
+											width: 25px;
+										}
+										.desc {
+											width: calc(100% - 25px);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.sliderBlock {
+					padding-top: 3rem;
+					.sliderBox {
+						img {
+							width: 100%;
+						}
+					}
+					.btnArea {
+						padding-top: 1.5rem;
+						display: flex;
+						.btn {
+							width: calc(50%);
+							@include max-screen($screen-sm) {
+								font-size: 12px;
+								margin: 0;
+							}
+							&:first-child {
+								margin-right: 0.75rem;
+							}
+							&:last-child {
+								margin-left: 0.75rem;
+							}
+						}
+					}
+				}
+			}
+			&.howItWork {
+				padding-top: 11.5rem;
+				@include max-screen($screen-tb) {
+					padding-top: 8rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 5rem;
+				}
+				.howItWorkCont {
+					.videoCont {
+						position: relative;
+						.videoBg {
+							position: absolute;
+							left: 0;
+							top: 0;
+							width: 100%;
+							height: 100%;
+							img {
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+					}
+					video {
+						width: 100%;
+					}
+					.btnArea {
+						padding-top: 4rem;
+						display: flex;
+						margin: 0 auto;
+						max-width: 540px;
+						@include max-screen($screen-tb) {
+							padding-top: 2rem;
+						}
+						@include max-screen($screen-sm) {
+							padding-top: 1.5rem;
+							max-width: 100%;
+						}
+						.btn {
+							width: calc(50%);
+							margin: 1rem;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							@include max-screen($screen-sm) {
+								font-size: 12px;
+								margin: 0;
+							}
+							&:first-child {
+								margin-right: 0.75rem;
+							}
+							&:last-child {
+								margin-left: 0.75rem;
+							}
+						}
+					}
+				}
+			}
+			&.needIdealCont {
+				padding-top: 10rem;
+				max-width: 720px;
+				margin: 0 auto;
+				@include max-screen($screen-tb) {
+					padding-top: 8rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 5rem;
+				}
+				.sliderNeed {
+					position: relative;
+					.needIdealBlock {
+						text-align: center;
+						position: relative;
+						&__item {
+							.content {
+								&__img {
+									img {
+										margin: 0 auto;
+										max-width: 350px;
+										@include max-screen($screen-sm) {
+											max-width: 170px;
+											padding-bottom: 2rem;
+										}
+									}
+								}
+								&__txt {
+									@include max-screen($screen-sm) {
+										max-width: 450px;
+										margin: 0 auto;
+									}
+								}
+							}
+						}
+						.slick-dots {
+							display: none !important;
+						}
+					}
+				}
+				.btnArea {
+					padding-top: 4rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-wrap: wrap;
+					width: 100%;
+					z-index: 2;
+					@include max-screen($screen-tb) {
+						padding-top: 3rem;
+					}
+					@include max-screen($screen-sm) {
+						padding-top: 1.5rem;
+						max-width: 100%;
+						max-width: 300px;
+						margin: 0 auto;
+					}
+					.btn {
+						width: calc(50% - 1rem);
+						padding: 1.5rem;
+						@include max-screen($screen-sm) {
+							font-size: 12px;
+							margin: 0;
+							width: 100%;
+						}
+						&:first-child {
+							margin-right: 0.75rem;
+							@include max-screen($screen-sm) {
+								margin-right: 0;
+								margin-bottom: 1rem;
+							}
+						}
+						&:last-child {
+							margin-left: 0.75rem;
+							@include max-screen($screen-sm) {
+								margin-left: 0;
+							}
+						}
+					}
+				}
+			}
+			&.giftIdeas {
+				padding-top: 11.5rem;
+				@include max-screen($screen-tb) {
+					padding-top: 8rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 5rem;
+				}
+				.giftIdeasBox {
+					&__item {
+						text-align: center;
+						@include max-screen($screen-sm) {
+							padding-bottom: 3rem;
+							&:last-child {
+								padding-bottom: 0;
+							}
+						}
+						.content {
+							&__img {
+								margin-bottom: 3rem;
+								overflow: hidden;
+								@include max-screen($screen-sm) {
+									margin-bottom: 2rem;
+								}
+								&:hover img {
+									transform: scale(1.1);
+								}
+								img {
+									object-fit: cover;
+									transform-origin: 50% 50%;
+									transition: transform 0.25s, visibility 0.25s ease-in;
+								}
+							}
+							.idealTtl {
+								font-weight: 500;
+								@include font-size(18);
+								@include max-screen($screen-sm) {
+									@include font-size(16);
+								}
+							}
+						}
+					}
+				}
+			}
+			&.testimonials {
+				margin-top: 6rem;
+				padding: 8rem 0;
+				background-image: url(../img/top/testimonial-bg.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: 50% 40%;
+				position: relative;
+				@include max-screen($screen-md) {
+					padding-bottom: 0;
+				}
+				@include max-screen($screen-sm) {
+					background-image: url(../img/top/testimonial-bg-sp.png);
+					background-position: 50% 130%;
+				}
+				@include max-screen($screen-xs) {
+					padding: 20rem 0 0;
+					background-size: contain;
+					background-position: center top;
+				}
+				.titlePage {
+					text-align: left;
+					@include max-screen($screen-sm) {
+						text-align: center;
+					}
+				}
+				.testimonialsBlock {
+					&__item {
+						padding: 0 4rem;
+						@include max-screen($screen-tb) {
+							padding: 0 1.5rem;
+						}
+						@include max-screen($screen-sm) {
+							padding: 0;
+							text-align: center;
+							// width: 100%;
+						}
+						.content {
+							&__img {
+								padding-bottom: 3rem;
+								@include max-screen($screen-sm) {
+									text-align: center;
+									padding-bottom: 2rem;
+								}
+								img {
+									@include max-screen($screen-sm) {
+										margin: 0 auto;
+									}
+								}
+							}
+							&__txt {
+								@include font-size(14);
+								text-align: justify;
+								@include max-screen($screen-sm) {
+									text-align: center;
+									max-width: 300px;
+									margin: 0 auto;
+								}
+								.name {
+									font-weight: 800;
+									text-transform: uppercase;
+									padding-top: 1rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			&.shareShine {
+				padding-top: 10rem;
+				@include max-screen($screen-tb) {
+					padding-top: 7rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 4rem;
+				}
+				.shareShineBox {
+					@include max-screen($screen-sm) {
+						padding: 0.75rem;
+					}
+					&__item {
+						@include max-screen($screen-sm) {
+							padding: 0.75rem;
+						}
+						.content {
+							position: relative;
+							&__img {
+								overflow: hidden;
+								@include max-screen($screen-sm) {
+									margin-bottom: 2rem;
+								}
+								&:hover img {
+									transform: scale(1.1);
+								}
+								img {
+									object-fit: cover;
+									transform-origin: 50% 50%;
+									transition: transform 0.25s, visibility 0.25s ease-in;
+									width: 100%;
+								}
+								.unitBox {
+									display: flex;
+									position: absolute;
+									left: 50%;
+									bottom: 1.2rem;
+									transform: translateX(-50%);
+									color: $white;
+									&__item {
+										padding: 0 1rem;
+										.heart {
+											position: relative;
+											padding-left: 3rem;
+											&:before {
+												content: '';
+												position: absolute;
+												width: 27px;
+												height: 22px;
+												left: 0;
+												top: 50%;
+												transform: translateY(-50%);
+												background-image: url(../img/common/heart-icon.png);
+												background-repeat: no-repeat;
+												background-position: center;
+												background-size: contain;
+												filter: brightness(100);
+											}
+										}
+										.bubble {
+											position: relative;
+											padding-left: 3rem;
+											&:before {
+												content: '';
+												position: absolute;
+												width: 27px;
+												height: 22px;
+												left: 0;
+												top: 50%;
+												transform: translateY(-50%);
+												background-image: url(../img/common/bubble-icon.png);
+												background-repeat: no-repeat;
+												background-position: center;
+												background-size: contain;
+												filter: brightness(100);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				.btnArea {
+					padding-top: 3rem;
+					@include max-screen($screen-sm) {
+						padding-top: 2rem;
+					}
+				}
+			}
+			&.financing {
+				padding-top: 13rem;
+				@include max-screen($screen-tb) {
+					padding-top: 8rem;
+				}
+				@include max-screen($screen-sm) {
+					padding-top: 5rem;
+				}
+				.desc {
+					padding-bottom: 3rem;
+				}
+				.subFinancing {
+					font-weight: 800;
+					text-transform: uppercase;
+					padding-bottom: 3rem;
+					line-height: 22px;
+				}
+			}
+			&.saleCont {
+				margin-top: 10rem;
+				background-image: url(../img/top/sale_img.png);
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: 50% 40%;
+				padding: 4rem 0 0;
+				@include max-screen($screen-tb) {
+					margin-top: 7rem;
+				}
+				@include max-screen($screen-md) {
+					padding-bottom: 7rem;
+				}
+				@include max-screen($screen-sm) {
+					margin-top: 6rem;
+					background-image: unset;
+					padding: 0;
+				}
+
+				.saleBlock {
+					display: flex;
+					flex-wrap: wrap;
+					position: relative;
+					&__avatar {
+						width: 185px;
+						text-align: center;
+						@include max-screen($screen-md) {
+							width: 100px;
+						}
+						@include max-screen($screen-sm) {
+							width: 100%;
+							padding-bottom: 2rem;
+						}
+					}
+					&__txt {
+						width: calc(100% - 455px);
+						padding: 0 6rem 0 4rem;
+						@include max-screen($screen-md) {
+							width: calc(100% - 300px);
+						}
+						@include max-screen($screen-sm) {
+							width: 100%;
+							padding: 0;
+							text-align: center;
+							padding-bottom: 2rem;
+						}
+						p {
+							@include font-size(14);
+							padding-bottom: 1rem;
+						}
+						.name {
+							font-weight: 800;
+							font-style: italic;
+							padding-top: 1rem;
+						}
+						.btnArea {
+							position: absolute;
+							left: 50%;
+							transform: translateX(-50%);
+							padding-top: 5rem;
+							@include max-screen($screen-md) {
+								padding-top: 2rem;
+							}
+						}
+					}
+					&__sale {
+						width: 270px;
+						text-align: center;
+						margin-bottom: -3rem;
+						@include max-screen($screen-md) {
+							width: 200px;
+							margin-bottom: 0rem;
+						}
+						@include max-screen($screen-sm) {
+							width: 100%;
+							background-image: url(../img/top/sale_img-bg.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+						}
+						img {
+							@include max-screen($screen-sm) {
+								max-width: 140px;
+								margin: 0 auto;
+							}
+						}
+					}
+				}
+			}
+			&.partners {
+				padding-top: 6rem;
+				@include max-screen($screen-sm) {
+					padding-top: 4rem;
+				}
+				.partnersBlock {
+					text-align: center;
+					max-width: 900px;
+					margin: 0 auto;
+					.txt {
+						padding-top: 3rem;
+						padding-bottom: 9rem;
+						@include max-screen($screen-sm) {
+							padding: 2rem 0 5rem;
+						}
+						p {
+							@include font-size(14);
+						}
+					}
+					.form {
+						padding: 0;
+						.subscribe {
+							display: flex;
+							max-width: 670px;
+							margin: 0 auto;
+							padding-bottom: 2rem;
+							input {
+								padding: 2rem;
+								@include font-size(14);
+								border-radius: 0;
+								border: 0;
+								background-color: $grey;
+								width: calc(100% - 230px);
+								margin-right: 1rem;
+								@include max-screen($screen-sm) {
+									margin-right: 0;
+									width: calc(100% - 150px);
+								}
+								@include max-screen($screen-xs) {
+									width: calc(100% - 120px);
+									padding: 1.5rem;
+								}
+								&:focus {
+									outline: none;
+								}
+							}
+							.btnArea {
+								width: 220px;
+								@include max-screen($screen-sm) {
+									width: 150px;
+								}
+								@include max-screen($screen-xs) {
+									width: 120px;
+								}
+								a {
+									height: 100%;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+								}
+							}
+						}
+						.desc {
+							@include font-size(14);
+						}
+					}
+				}
+			}
+		}
+	}
+}

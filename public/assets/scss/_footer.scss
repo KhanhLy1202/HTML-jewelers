@@ -1,0 +1,133 @@
+/***********************************************
+  Footer Container
+************************************************/
+.footerCont {
+	.footerBlock {
+		&__item {
+			@include max-screen($screen-sm) {
+				padding: 0;
+				&:last-child {
+					.content {
+						.sitemapTtl {
+							@include max-screen($screen-sm) {
+								border-bottom: 1px solid rgb(180, 180, 180);
+							}
+						}
+					}
+				}
+			}
+			.content {
+				.sitemapTtl {
+					font-weight: 600;
+					margin-bottom: 1.5rem;
+					display: block;
+					@include max-screen($screen-sm) {
+						margin-bottom: 0;
+						padding: 1.5rem 4rem;
+						border-top: 1px solid rgb(180, 180, 180);
+						position: relative;
+					}
+					@include max-screen($screen-xs) {
+						padding: 1.5rem;
+					}
+					&.active {
+						box-shadow: 0px 5px 9px 0px rgba(220, 220, 220, 0.54);
+						border-bottom: 1px solid rgb(180, 180, 180);
+						&:after {
+							background-image: url(../img/common/up-arrow.png);
+						}
+					}
+					&:after {
+						@include max-screen($screen-sm) {
+							content: '';
+							position: absolute;
+							width: 20px;
+							height: 10px;
+							top: 50%;
+							right: 4rem;
+							transform: translateY(-50%);
+							background-image: url(../img/common/down-arrow.png);
+							background-repeat: no-repeat;
+							background-size: contain;
+							background-position: center;
+						}
+						@include max-screen($screen-xs) {
+							right: 1.5rem;
+						}
+					}
+				}
+				.sitemapCol {
+					@include max-screen($screen-sm) {
+						padding: 3rem 0;
+						display: none;
+					}
+					@include max-screen($screen-xs) {
+						padding: 2rem 0;
+					}
+					&__item {
+						margin-bottom: 0.5rem;
+						@include max-screen($screen-sm) {
+							padding: 0.2rem 0;
+							padding-left: 4rem;
+						}
+
+						@include max-screen($screen-xs) {
+							padding-left: 1.5rem;
+						}
+
+						&:last-child {
+							margin-bottom: 0;
+						}
+						.ttlMain {
+							@include font-size(12);
+							display: block;
+							&.icon {
+								position: relative;
+								padding-left: 4rem;
+								color: $text;
+								&:before {
+									content: '';
+									position: absolute;
+									top: 10px;
+									left: 0;
+									width: 20px;
+									height: 17px;
+									transform: translateY(-50%);
+									background-repeat: no-repeat;
+									background-position: center left;
+									background-size: contain;
+								}
+								&.add {
+									&:before {
+										background-image: url(../img/common/icon-add.png);
+									}
+								}
+								&.tel {
+									&:before {
+										background-image: url(../img/common/icon-tel.png);
+									}
+								}
+								&.email {
+									&:before {
+										background-image: url(../img/common/icon-email.png);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.copyright {
+		padding: 10rem 0 5rem;
+		@include max-screen($screen-tb) {
+			padding: 8rem 0 4rem;
+		}
+		@include max-screen($screen-tb) {
+			padding: 6rem 0 3rem;
+		}
+		text-align: center;
+		@include font-size(12);
+	}
+}

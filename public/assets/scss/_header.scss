@@ -1,0 +1,207 @@
+/***********************************************
+  Header Container
+************************************************/
+.welcomeCont {
+	background-color: $lightYellow;
+	padding: 1rem 0;
+	text-align: center;
+}
+.headerCont {
+	background-color: #fff;
+	&.active {
+		.headerCont__menu {
+			width: 100%;
+			height: 100vh;
+			// top: 0;
+			left: 0;
+			z-index: 9999;
+		}
+	}
+	&.shrink {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		-webkit-transition: max-height 0.5s ease-in-out;
+		-moz-transition: max-height 0.5s ease-in-out;
+		-o-transition: max-height 0.5s ease-in-out;
+		transition: max-height 0.5s ease-in-out;
+		z-index: 9999;
+		box-shadow: 0 7px 12px 0 rgba(0, 0, 0, 0.15);
+	}
+	&__top {
+		border-bottom: 1px solid $border;
+		.topCont {
+			display: flex;
+			height: 100px;
+			justify-content: center;
+			align-items: center;
+			padding: 1.5rem 0;
+			position: relative;
+			@include max-screen($screen-sm) {
+				justify-content: space-between;
+				height: 75px;
+			}
+			@include max-screen($screen-xs) {
+				height: 60px;
+			}
+			&__logo {
+				width: 100%;
+				max-width: 260px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				@include max-screen($screen-sm) {
+					position: static;
+					width: 50%;
+					display: flex;
+					align-items: center;
+					transform: translate(0, 0);
+					max-width: 100%;
+				}
+				.globalnavToggle {
+					width: 45px;
+					height: 34px;
+					border: 0;
+					background-image: url(../img/common/hambuger.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-color: transparent;
+					background-position: center;
+					@include max-screen($screen-xs) {
+						width: 35px;
+					}
+					@include max-screen(380px) {
+						width: 25px;
+					}
+					&:focus {
+						outline: 0;
+					}
+					&.globalnavToggle--opened {
+						background-image: url(../img/common/close.png);
+					}
+				}
+				.logo {
+					@include max-screen($screen-sm) {
+						width: calc(100% - 45px);
+						padding-left: 2rem;
+					}
+					@include max-screen($screen-xs) {
+						width: calc(100% - 35px);
+						padding-left: 1.5rem;
+					}
+					@include max-screen(380px) {
+						width: calc(100% - 25px);
+						padding-left: 1rem;
+					}
+					.brand {
+						display: block;
+					}
+				}
+			}
+			&__feature {
+				width: 100%;
+				@include max-screen($screen-sm) {
+					width: 50%;
+				}
+				.featureCont {
+					display: flex;
+					justify-content: flex-end;
+					&__item {
+						padding-right: 5rem;
+						@include max-screen($screen-tb) {
+							padding-right: 3rem;
+						}
+						@include max-screen($screen-sm) {
+							padding-right: 2rem;
+						}
+						@include max-screen(380px) {
+							padding-right: 1rem;
+						}
+						&:last-child {
+							padding-right: 0;
+						}
+						a {
+							position: relative;
+							padding-left: 2.5rem;
+							@include max-screen($screen-xs) {
+								padding-left: 1.8rem;
+								font-size: 12px;
+							}
+							&:before {
+								content: '';
+								position: absolute;
+								width: 18px;
+								height: 18px;
+								top: 50%;
+								left: 0;
+								transform: translateY(-50%);
+								background-repeat: no-repeat;
+								background-position: center;
+								background-size: contain;
+								@include max-screen($screen-xs) {
+									width: 14px;
+									height: 14px;
+								}
+							}
+							&.register {
+								&:before {
+									background-image: url(../img/common/register.png);
+								}
+							}
+							&.login {
+								&:before {
+									background-image: url(../img/common/person.png);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&__menu {
+		padding: 2rem 0;
+		@include max-screen($screen-sm) {
+			display: none;
+			background-color: $white;
+			position: fixed;
+			width: 100%;
+		}
+		.container {
+			@include max-screen($screen-sm) {
+				height: 100%;
+			}
+		}
+		.navMenu {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			&__item {
+				padding: 0 5rem;
+				@include max-screen($screen-tb) {
+					padding: 0 3rem;
+				}
+				@include max-screen($screen-md) {
+					padding: 0 2rem;
+				}
+				@include max-screen($screen-sm) {
+					width: 100%;
+					text-align: center;
+					padding: 1rem;
+					border-bottom: 1px solid rgb(180, 180, 180);
+					&:last-child {
+						border-bottom: 0;
+					}
+				}
+				a {
+					&:hover {
+						color: $yellow;
+					}
+				}
+			}
+		}
+	}
+}

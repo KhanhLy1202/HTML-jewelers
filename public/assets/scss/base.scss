@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+@import 'variable';
+@import 'basic/mixin';
+@import 'basic/selector';
+
+@import 'basic/reset';
+@import 'basic/default';
+// @import 'basic/grid';
+
+/*==================================================================================================
+	サイト基礎
+==================================================================================================*/
+body {
+	color: $text;
+	font-weight: 500;
+	overflow-x: hidden;
+	line-height: 1.6;
+	font-family: $default-font;
+	@include font-size(16);
+
+	@include max-screen($screen-tb) {
+		@include font-size(15);
+	}
+
+	@include max-screen($screen-sm) {
+		@include font-size(14);
+	}
+	a {
+		transition: 0.5s;
+		color: $text;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			opacity: 0.8;
+			color: $text;
+		}
+	}
+}
+.lContainer {
+	padding: 0 0 10rem;
+	@include max-screen($screen-tb) {
+		padding: 0 0 7rem;
+	}
+	@include max-screen($screen-sm) {
+		padding: 0 0 6rem;
+	}
+}
+
+.pc {
+	display: block;
+	@include max-screen($screen-sm) {
+		display: none;
+	}
+}
+
+.-hidden {
+	overflow: hidden;
+}
+
+.tb {
+	display: block;
+	@include max-screen($screen-tb) {
+		display: none;
+	}
+}
+
+.sp {
+	display: none;
+	@include max-screen($screen-sm) {
+		display: block;
+	}
+}
+.container {
+	max-width: $width-site;
+	@include inner();
+	margin: 0 auto;
+	width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+
+/*==================================================================================================
+	button
+==================================================================================================*/
+.btn {
+	text-transform: uppercase;
+	text-shadow: 0px 3px 4px rgba(229, 161, 45, 0.54);
+	background-color: $yellow;
+	padding: 2rem 3rem;
+	display: inline-block;
+	font-weight: bold;
+	color: $white;
+	white-space: break-spaces;
+	border-radius: 0;
+	@include max-screen($screen-sm) {
+		padding: 2rem 2.5rem;
+	}
+
+	&:hover {
+		color: $white;
+	}
+	&.btn-icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.imgBtn {
+			width: 100px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		span {
+			display: block;
+			width: calc(100% - 100px);
+		}
+	}
+}
+
+/*==================================================================================================
+	Title
+==================================================================================================*/
+.titlePage {
+	font-size: 30px;
+	font-weight: 500;
+	text-align: center;
+	line-height: 42px;
+	padding-bottom: 3rem;
+	@include max-screen($screen-tb) {
+		font-size: 28px;
+		line-height: 34px;
+	}
+	@include max-screen($screen-md) {
+		font-size: 22px;
+		line-height: 30px;
+		padding-bottom: 2rem;
+	}
+	@include max-screen($screen-xs) {
+		font-size: 24px;
+		line-height: 28px;
+	}
+	@include max-screen(380px) {
+		font-size: 18px;
+		line-height: 28px;
+	}
+	&.noPd {
+		padding-bottom: 0;
+	}
+	&.pt5 {
+		padding-bottom: 5rem;
+		@include max-screen($screen-tb) {
+			padding-bottom: 3.5rem;
+		}
+		@include max-screen($screen-sm) {
+			padding-bottom: 2rem;
+		}
+	}
+	.sub {
+		display: block;
+		font-size: initial;
+		line-height: 1;
+		padding-top: 1rem;
+	}
+}
+.subTitle {
+	font-size: 25px;
+	font-weight: 500;
+	text-align: center;
+	text-transform: uppercase;
+	@include max-screen($screen-tb) {
+		font-size: 20px;
+	}
+	@include max-screen($screen-sm) {
+		font-size: 16px;
+		line-height: 28px;
+	}
+	@include max-screen($screen-xs) {
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+
+/*==================================================================================================
+	Slider
+==================================================================================================*/
+.carousel-indicators li {
+	border: 0;
+	background-color: rgba($color: $white, $alpha: 0.35);
+	&.active {
+		width: 10px;
+		height: 10px;
+		margin: 1px;
+	}
+}
+.slick-dots li {
+	margin: 0;
+	&.slick-active {
+		button {
+			background: $yellow;
+		}
+	}
+	button {
+		background: rgba($color: $yellow, $alpha: 0.2);
+		border-radius: 100px;
+		width: 10px;
+		height: 10px;
+		&:before {
+			display: none;
+		}
+	}
+}
+.arrows {
+	position: absolute;
+	left: 3rem;
+	right: 3rem;
+	bottom: 5px;
+	height: 20px;
+	transform: translateY(50%);
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	&.arrowTestimo {
+		display: none;
+		@include max-screen($screen-sm) {
+			display: flex;
+		}
+	}
+	&.needIdea {
+		top: 40%;
+		bottom: auto;
+	}
+	ul {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		li {
+			max-width: 50px;
+			@include max-screen($screen-xs) {
+				max-width: 30px;
+			}
+		}
+	}
+}
+.prev,
+.next {
+	cursor: pointer;
+}
+.diamonArrow {
+	max-width: 700px;
+	margin: 0 auto;
+	ul {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.txtSlider {
+		text-align: center;
+		display: none;
+		width: calc(100% - 100px);
+		&.active {
+			display: block;
+		}
+		&__title {
+			font-weight: bold;
+			@include font-size(19);
+			text-transform: uppercase;
+			@include max-screen($screen-xs) {
+				@include font-size(16);
+			}
+		}
+		&__sub {
+			text-transform: uppercase;
+			padding: 0 2rem;
+			@include max-screen($screen-xs) {
+				@include font-size(12);
+				padding: 0 1rem;
+			}
+		}
+	}
+	.prev,
+	.next {
+		width: 50px;
+		@include max-screen($screen-xs) {
+			width: 30px;
+		}
+	}
+}
+.slick-slide:focus {
+	outline: none !important;
+}
